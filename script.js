@@ -7,20 +7,24 @@ const topics = [
     'Tổng kết và cảm ơn',
     'Minigame tương tác cùng khán giả',
     'Giới thiệu sản phẩm mới',
-    'Thông báo chương trình bốc thăm may mắn',
     'Phát biểu đại diện Ban tổ chức',
     'Lời chúc mừng và khép lại sự kiện'
   ];
   
-  const topicEl = document.getElementById('topic');
-  const pickBtn = document.getElementById('pickBtn');
+  // Element references
+  const pickBtn       = document.getElementById('pickBtn');
+  const modalOverlay  = document.getElementById('modal-overlay');
+  const modalText     = document.getElementById('modal-text');
+  const modalCloseBtn = document.getElementById('modal-close-btn');
   
   pickBtn.addEventListener('click', () => {
     const idx = Math.floor(Math.random() * topics.length);
-    topicEl.style.opacity = '0';
-    setTimeout(() => {
-      topicEl.textContent = topics[idx];
-      topicEl.style.opacity = '1';
-    }, 100);
+    modalText.textContent = topics[idx];
+    modalOverlay.style.display = 'flex';
+  });
+  
+  modalCloseBtn.addEventListener('click', () => {
+    modalOverlay.style.display = 'none';
+    // Người dùng có thể nhấn lại "Chọn Ngẫu Nhiên" để quay tiếp
   });
   

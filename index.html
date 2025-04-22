@@ -8,11 +8,20 @@
 <body>
   <div class="container">
     <div class="header">
-      <img src="EMCEE.png" alt="EMCEE Logo" class="logo">
+      <img src="EMCEE.jpg" alt="EMCEE Logo" class="logo">
       <h1>Chọn Đề Tài MC Ngẫu Nhiên</h1>
     </div>
+
     <div id="topic">Ấn nút để chọn đề tài!</div>
     <button class="btn" id="pickBtn">Chọn Ngẫu Nhiên</button>
+  </div>
+
+  <!-- Popup modal -->
+  <div id="modal-overlay" class="modal-overlay">
+    <div class="modal">
+      <div id="modal-text"></div>
+      <button id="modal-close-btn" class="btn-close">Đóng</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
